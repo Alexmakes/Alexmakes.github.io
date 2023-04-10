@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://alexmakes.github.io/sitemap.xml

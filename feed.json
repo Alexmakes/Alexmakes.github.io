@@ -1,0 +1,14 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "AlexMakes",
+    "description": "",
+    "home_page_url": "https://alexmakes.github.io",
+    "feed_url": "https://alexmakes.github.io/feed.json",
+    "user_comment": "",
+    "icon": "https://alexmakes.github.io/media/website/huge-round-less-white-background.png",
+    "author": {
+        "name": "alex benett"
+    },
+    "items": [
+    ]
+}
