@@ -5,7 +5,14 @@ Alex Bennett	Email:  info@alexmakes.net
 
 R&D Researcher developing novel solutions in engineering though materials science. 
 
-
+# posts 
+        <ul>
+          {% for post in site.posts %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
 
 ### Experience
 
