@@ -1,10 +1,5 @@
  
-
-
-
- <img src="attachments/index/alex makes logo.png" style="zoom: 80%;" />	  
-
- # Scientist, Maker, Fabricator
+# Scientist, Maker, Fabricator
 
 Alex Bennett	Email:  info@alexmakes.net	
 
