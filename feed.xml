@@ -3,43 +3,49 @@
     <title>AlexMakes</title>
     <link href="https://alexmakes.github.io/feed.xml" rel="self" />
     <link href="https://alexmakes.github.io" />
-    <updated>2023-04-10T19:33:35+01:00</updated>
+    <updated>2023-04-11T16:25:53+01:00</updated>
     <author>
         <name>alex benett</name>
     </author>
     <id>https://alexmakes.github.io</id>
 
     <entry>
-        <title>AutoCrat</title>
+        <title>Axe Repair time</title>
         <author>
             <name>alex benett</name>
         </author>
-        <link href="https://alexmakes.github.io/autocrat/"/>
-        <id>https://alexmakes.github.io/autocrat/</id>
-            <category term="Projects"/>
+        <link href="https://alexmakes.github.io/axe-repair-time/"/>
+        <id>https://alexmakes.github.io/axe-repair-time/</id>
 
-        <updated>2023-04-10T19:33:35+01:00</updated>
+        <updated>2023-04-11T16:25:53+01:00</updated>
             <summary>
                 <![CDATA[
-                    AutoCrat is a project that aims to create a robot capable of reading, writing, and folding hand-written letters, as well as performing other "paperwork" tasks. The project is intended to be a cutting-edge robot that can revolutionize the way we handle our paperwork. Before we&hellip;
+                    given a wobbly axe to fix it needs its pin milling out and re hafting, shouldn't take too long original wobbly axe centre drill the pin out removed the head carved wedge out of services wood and cut slot hafted head back on drove the&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p><br>AutoCrat is a project that aims to create a robot capable of reading, writing, and folding hand-written letters, as well as performing other "paperwork" tasks. The project is intended to be a cutting-edge robot that can revolutionize the way we handle our paperwork.<br><br>Before we dive into the nitty-gritty details of building AutoCrat, let's take a moment to understand what this project is all about. AutoCrat is essentially a robot that can perform tasks that are typically done by humans, such as reading and writing letters, filling out forms, and processing data. The idea behind AutoCrat is to automate mundane tasks so that humans can focus on more important things, like creativity and problem-solving.</p>
-<h2>Step 1: where do we start</h2>
-<p>oh boi this is going to be big so lets split this up into its individual parts these will change as /cross fingers</p>
-<ol>
-<li>something to write with eg. pen plotter</li>
-<li>tool chain too convert text -&gt; SVG -&gt; Gcode</li>
-<li>Ai too generate the text using an LLM </li>
-<li>A way to generate believable handwriting </li>
-<li>Folding paper</li>
-</ol>
-<h2>Step 2: why</h2>
-<p>no one likes paperwork and the people that do i dont understand so why not have a robot do it for you, what could go wrong.</p>
-<h2>Step 3: where</h2>
-<p>first copy of the AutoCrat will be unveiled at the <a href="https://www.emfcamp.org" target="_blank" rel="noopener noreferrer">EMF Camp</a> in 2024 </p>
+                <p>given a wobbly axe to fix it needs its pin milling out and re hafting, shouldn't take too long</p>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-translation="Add images" data-columns="3">
+<figure class="gallery__item"><a href="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_125128966.jpg" data-size="669x888"><img loading="lazy" src="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_125128966-thumbnail.jpg" alt="" width="669" height="888"></a>
+<figcaption>original wobbly axe</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_150856074.jpg" data-size="683x514"><img loading="lazy" src="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_150856074-thumbnail.jpg" alt="" width="683" height="514"></a>
+<figcaption>centre drill the pin out</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_152124725.jpg" data-size="661x878"><img loading="lazy" src="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_152124725-thumbnail.jpg" alt="" width="661" height="878"></a>
+<figcaption>removed the head</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_155007096.jpg" data-size="661x878"><img loading="lazy" src="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_155007096-thumbnail.jpg" alt="" width="661" height="878"></a>
+<figcaption>carved wedge out of services wood and cut slot</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_155907261.jpg" data-size="661x878"><img loading="lazy" src="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_155907261-thumbnail.jpg" alt="" width="661" height="878"></a>
+<figcaption>hafted head back on</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_162034028.jpg" data-size="661x878"><img loading="lazy" src="https://alexmakes.github.io/media/posts/5/gallery/IMG_20230411_162034028-thumbnail.jpg" alt="" width="661" height="878"></a>
+<figcaption>drove the wedge home. all done</figcaption>
+</figure>
+</div></div>
             ]]>
         </content>
     </entry>
@@ -163,6 +169,85 @@
 <h2 id="interests">Interests</h2>
 <p>playing the ocarina and have been for over 10 years, cycling and home cooking </p>
 
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Pen plotter time ✒️</title>
+        <author>
+            <name>alex benett</name>
+        </author>
+        <link href="https://alexmakes.github.io/pen-plotter-time/"/>
+        <id>https://alexmakes.github.io/pen-plotter-time/</id>
+            <category term="Projects"/>
+
+        <updated>2023-04-11T14:43:16+01:00</updated>
+            <summary>
+                <![CDATA[
+                    For AutoCrat to put ink to paper it needs a way of automatic writng and for this we use the humble pen plotter. while at first glance is a complex machine with all the belts and pulleys's A pen plotter moves its x-y platform by&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>For AutoCrat to put ink to paper it needs a way of automatic writng and for this we use the humble pen plotter. while at first glance is a complex machine with all the belts and pulleys's</p>
+<h2>how a pen plotter works</h2>
+<p>A pen plotter moves its x-y platform by using a combination of stepper motors and belts, just like a 3D printer. However, instead of extruding plastic, a pen plotter holds a pen or other writing instrument that is moved across the surface of a piece of paper or other material. The platform is typically mounted on a set of linear bearings, which allow it to move smoothly and accurately in the x-y plane. As the motors turn, the belts pull the platform in the desired direction, allowing the plotter to create precise drawings and designs. By carefully controlling the motion of the platform and the pen, pen plotters can produce highly detailed and accurate artwork.<img loading="lazy" src="https://3dwithus.com/wp-content/uploads/2020/12/Plotter-Toolhead-pltr-v1-Mounted-on-the-Anet-ET4X.jpg" data-is-external-image="true"></p>
+<h2>How to talk pen plotter</h2>
+<p>G-code is a programming language used to control the movements of pen plotters and other CNC machines. It consists of a series of commands that tell the plotter how to move the x-y platform and pen, when to turn the pen on and off, and at what speed to move.</p>
+<p>In a pen plotter context, G-code is generated by a drawing program that creates a design or image, which is then converted into a series of G-code commands. These commands tell the plotter how to move the x-y platform and pen to recreate the design on a piece of paper or other material.</p>
+<p>For example, a G-code command might look something like this: G1 X10 Y20 E0.3 F300. This command would tell the plotter to move the x-y platform to position X=10, Y=20 (measured in millimeters), while simultaneously lowering the pen to the paper and drawing a line with a thickness of 0.3mm at a speed of 300mm/min.</p>
+<h2>Build time<br><br></h2>
+<p>while borrowing a pen plotter that runs on the opensource GURBL firmware and using the gcode generator in Inkscape i did a couple test letters by using the hershies text function thats after a lot of messing around writing rude words and lines. </p>
+<div class="gallery-wrapper"><div class="gallery"  data-is-empty="false" data-translation="Add images" data-columns="3">
+<figure class="gallery__item"><a href="https://alexmakes.github.io/media/posts/4/gallery/IMG_20230125_145523535.jpg" data-size="167x222"><img loading="lazy" src="https://alexmakes.github.io/media/posts/4/gallery/IMG_20230125_145523535-thumbnail.jpg" alt="" width="167" height="222"></a>
+<figcaption>testing</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://alexmakes.github.io/media/posts/4/gallery/IMG_20230125_175823941.jpg" data-size="531x400"><img loading="lazy" src="https://alexmakes.github.io/media/posts/4/gallery/IMG_20230125_175823941-thumbnail.jpg" alt="" width="531" height="400"></a>
+<figcaption>progress with text</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://alexmakes.github.io/media/posts/4/gallery/IMG_20230128_154039847_BURST000_COVER.jpg" data-size="216x163"><img loading="lazy" src="https://alexmakes.github.io/media/posts/4/gallery/IMG_20230128_154039847_BURST000_COVER-thumbnail.jpg" alt="" width="216" height="163"></a>
+<figcaption>Ai generated letter</figcaption>
+</figure>
+</div></div>
+<figure class="post__video"><video loading="lazy" width="697" height="342" style="width: 697px; height: 342px;" controls="controls" data-mce-fragment="1">
+<source src="https://alexmakes.github.io/media/posts/4/VID_20230128_154050071-2.mp4" type="video/mp4" /></video></figure>
+<p>the toolchain for inkscape can not be automated but as a proff of concept it did produce nice results after much screaming at the sky i made one last item a map that now sits nicely one our wall</p>
+<figure class="post__image"><img loading="lazy"  src="https://alexmakes.github.io/media/posts/4/IMG_20230128_181810142.jpg" alt="" width="744" height="560" sizes="100vw" srcset="https://alexmakes.github.io/media/posts/4/responsive/IMG_20230128_181810142-xs.jpg 300w ,https://alexmakes.github.io/media/posts/4/responsive/IMG_20230128_181810142-sm.jpg 480w ,https://alexmakes.github.io/media/posts/4/responsive/IMG_20230128_181810142-md.jpg 768w ,https://alexmakes.github.io/media/posts/4/responsive/IMG_20230128_181810142-lg.jpg 1024w ,https://alexmakes.github.io/media/posts/4/responsive/IMG_20230128_181810142-xl.jpg 1360w ,https://alexmakes.github.io/media/posts/4/responsive/IMG_20230128_181810142-2xl.jpg 1600w"></figure>
+<p><br><br></p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>AutoCrat</title>
+        <author>
+            <name>alex benett</name>
+        </author>
+        <link href="https://alexmakes.github.io/autocrat/"/>
+        <id>https://alexmakes.github.io/autocrat/</id>
+            <category term="Projects"/>
+
+        <updated>2023-04-11T13:47:38+01:00</updated>
+            <summary>
+                <![CDATA[
+                    AutoCrat is a project that aims to create a robot capable of reading, writing, and folding hand-written letters, as well as performing other "paperwork" tasks. The project is intended to be a cutting-edge robot that can revolutionize the way we handle our paperwork. Before we&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><br>AutoCrat is a project that aims to create a robot capable of reading, writing, and folding hand-written letters, as well as performing other "paperwork" tasks. The project is intended to be a cutting-edge robot that can revolutionize the way we handle our paperwork.<br><br>Before we dive into the nitty-gritty details of building AutoCrat, let's take a moment to understand what this project is all about. AutoCrat is essentially a robot that can perform tasks that are typically done by humans, such as reading and writing letters, filling out forms, and processing data. The idea behind AutoCrat is to automate mundane tasks so that humans can focus on more important things, like creativity and problem-solving.</p>
+<h2>Step 1: where do we start</h2>
+<p>oh boi this is going to be big so lets split this up into its individual parts these will change as /cross fingers</p>
+<ol>
+<li>something to write with eg. pen plotter</li>
+<li>tool chain too convert text -&gt; SVG -&gt; Gcode</li>
+<li>Ai too generate the text using an LLM </li>
+<li>A way to generate believable handwriting </li>
+<li>Folding paper</li>
+</ol>
+<h2>Step 2: why</h2>
+<p>no one likes paperwork and the people that do i dont understand so why not have a robot do it for you, what could go wrong.</p>
+<h2>Step 3: where</h2>
+<p>first copy of the AutoCrat will be unveiled at the <a href="https://www.emfcamp.org" target="_blank" rel="noopener noreferrer">EMF Camp</a> in 2024 </p>
             ]]>
         </content>
     </entry>
