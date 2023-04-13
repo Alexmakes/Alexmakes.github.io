@@ -3,21 +3,21 @@
     <title>AlexMakes</title>
     <link href="https://alexmakes.github.io/feed.xml" rel="self" />
     <link href="https://alexmakes.github.io" />
-    <updated>2023-04-11T16:25:53+01:00</updated>
+    <updated>2023-04-13T17:30:28+01:00</updated>
     <author>
         <name>alex benett</name>
     </author>
     <id>https://alexmakes.github.io</id>
 
     <entry>
-        <title>Axe Repair time</title>
+        <title>Quick Axe Repair</title>
         <author>
             <name>alex benett</name>
         </author>
         <link href="https://alexmakes.github.io/axe-repair-time/"/>
         <id>https://alexmakes.github.io/axe-repair-time/</id>
 
-        <updated>2023-04-11T16:25:53+01:00</updated>
+        <updated>2023-04-13T11:05:25+01:00</updated>
             <summary>
                 <![CDATA[
                     given a wobbly axe to fix it needs its pin milling out and re hafting, shouldn't take too long original wobbly axe centre drill the pin out removed the head carved wedge out of services wood and cut slot hafted head back on drove the&hellip;
@@ -173,7 +173,75 @@
         </content>
     </entry>
     <entry>
-        <title>Pen plotter time ✒️</title>
+        <title>Project: In to the Ai-verse </title>
+        <author>
+            <name>alex benett</name>
+        </author>
+        <link href="https://alexmakes.github.io/project-in-to-the-ai-verse/"/>
+        <id>https://alexmakes.github.io/project-in-to-the-ai-verse/</id>
+            <category term="Projects"/>
+            <category term="ChatGPT"/>
+            <category term="Ai"/>
+
+        <updated>2023-04-13T17:30:28+01:00</updated>
+            <summary>
+                <![CDATA[
+                    as part of AutoCrat project i will need a way of generating text from a prompt and will all the hype of ChatGPT you think that would be a great contender for this and you be right, untill you remember EMF happens in a field&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>as part of AutoCrat project i will need a way of generating text from a prompt and will all the hype of ChatGPT you think that would be a great contender for this and you be right, untill you remember EMF happens in a field in the middle of nowhere and internet will be slow enough that handling all the compute in the cloud is not an option so enter player 2, a dell 1U server with 128gb of ram. </p>
+<h3>Adventure </h3>
+<p>one long car journey and a lot of sweat and swearing as push a 1U server and monitor into the back of a hatchback in the middle of northwest</p>
+<figure class="post__image"><img loading="lazy"  src="https://alexmakes.github.io/media/posts/6/IMG_20230311_131849465-2.jpg" alt="" width="517" height="389" sizes="100vw" srcset="https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_131849465-2-xs.jpg 300w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_131849465-2-sm.jpg 480w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_131849465-2-md.jpg 768w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_131849465-2-lg.jpg 1024w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_131849465-2-xl.jpg 1360w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_131849465-2-2xl.jpg 1600w"></figure>
+<p>getting it setup on the desk before it goes in a rack, dahm these are loud, extra points for RGB. OS of choice for servers is Ubuntu server edition as its install is painless and has all the drivers for raid controllers and is possible to add open SHH from the install and no need to do it later.</p>
+<figure class="post__image"><img loading="lazy"  src="https://alexmakes.github.io/media/posts/6/IMG_20230311_174943003-2.jpg" alt="" width="721" height="541" sizes="100vw" srcset="https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_174943003-2-xs.jpg 300w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_174943003-2-sm.jpg 480w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_174943003-2-md.jpg 768w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_174943003-2-lg.jpg 1024w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_174943003-2-xl.jpg 1360w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230311_174943003-2-2xl.jpg 1600w"></figure>
+<h3>All setup</h3>
+<p>OS installed and SHH working can sit back and enjoy getting an LLM installed. </p>
+<figure class="post__image"><img loading="lazy"  src="https://alexmakes.github.io/media/posts/6/IMG_20230312_142131484.jpg" alt="" width="721" height="543" sizes="100vw" srcset="https://alexmakes.github.io/media/posts/6/responsive/IMG_20230312_142131484-xs.jpg 300w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230312_142131484-sm.jpg 480w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230312_142131484-md.jpg 768w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230312_142131484-lg.jpg 1024w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230312_142131484-xl.jpg 1360w ,https://alexmakes.github.io/media/posts/6/responsive/IMG_20230312_142131484-2xl.jpg 1600w"></figure>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Sub 40 Min Benchy with ender 3v2 for under £20 </title>
+        <author>
+            <name>alex benett</name>
+        </author>
+        <link href="https://alexmakes.github.io/sub-40-min-benchy-with-ender-3v2-for-under-ps20/"/>
+        <id>https://alexmakes.github.io/sub-40-min-benchy-with-ender-3v2-for-under-ps20/</id>
+            <category term="3DPrinting"/>
+
+        <updated>2023-04-13T17:18:16+01:00</updated>
+            <summary>
+                <![CDATA[
+                    the old ender 3v2 needed replacement parts mainly its extruder was broken and the hotend was getting clogged every other print. so maybe it was a time for upgrade and without breaking the bank the cheap all metal geared extruders for the ender 3 are&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>the old ender 3v2 needed replacement parts mainly its extruder was broken and the hotend was getting clogged every other print. so maybe it was a time for upgrade and without breaking the bank </p>
+<figure class="post__image" ><img loading="lazy" src="https://alexmakes.github.io/media/posts/7/IMG_20230306_230644624.jpg" alt="results " width="407" height="541" sizes="100vw" srcset="https://alexmakes.github.io/media/posts/7/responsive/IMG_20230306_230644624-xs.jpg 300w ,https://alexmakes.github.io/media/posts/7/responsive/IMG_20230306_230644624-sm.jpg 480w ,https://alexmakes.github.io/media/posts/7/responsive/IMG_20230306_230644624-md.jpg 768w ,https://alexmakes.github.io/media/posts/7/responsive/IMG_20230306_230644624-lg.jpg 1024w ,https://alexmakes.github.io/media/posts/7/responsive/IMG_20230306_230644624-xl.jpg 1360w ,https://alexmakes.github.io/media/posts/7/responsive/IMG_20230306_230644624-2xl.jpg 1600w">
+<figcaption >Caption</figcaption>
+</figure>
+<h4>Hardware needed </h4>
+<ol>
+<li>a geared extruder </li>
+<li>bi metal hotend</li>
+</ol>
+<p>the cheap all metal geared extruders for the ender 3 are cheap and allow for the filament to be pushed harder and retreated faster, price £8 free shipping, the Bi metal hotend is magic the bottom made of titanium of the hotend remains hot allowing for high flow rates but the top made of copper tranmits the heat away from the filament preventing heat creep. </p>
+<h4>software </h4>
+<p>the ender 3 bowden tube is known for causing issues with clogging and resistant too pressure change that retraction and changes in speed of extruding cause. so we want to keep the pressure in the tube as constant as possible. we do this with automatic speed on prusia slicer you have measure the max flow rate of the hotend mine maxed out at 8mm^2/s with PLA, then slicer takes care of the rest.</p>
+<p>the steppers on the ender 3v2 have a lot more torque than you'll expect so its simple to go into the firmware and up the acceleration until it didn't skip.</p>
+<h4><figure class="post__image"><img loading="lazy"  src="undefined" alt="" data-is-external-image="true"></figure>Results in action</h4>
+<figure class="post__video"><video loading="lazy" width="658" height="328" style="width: 658px; height: 328px;" controls="controls" data-mce-fragment="1">
+<source src="https://alexmakes.github.io/media/posts/7/VID_20230309_172400595.mp4_2-2.mp4" type="video/mp4" /></video></figure>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Project: Pen plotter time ✒️</title>
         <author>
             <name>alex benett</name>
         </author>
@@ -181,7 +249,7 @@
         <id>https://alexmakes.github.io/pen-plotter-time/</id>
             <category term="Projects"/>
 
-        <updated>2023-04-11T14:43:16+01:00</updated>
+        <updated>2023-04-13T11:01:43+01:00</updated>
             <summary>
                 <![CDATA[
                     For AutoCrat to put ink to paper it needs a way of automatic writng and for this we use the humble pen plotter. while at first glance is a complex machine with all the belts and pulleys's A pen plotter moves its x-y platform by&hellip;
@@ -218,7 +286,7 @@
         </content>
     </entry>
     <entry>
-        <title>AutoCrat</title>
+        <title>Project: AutoCrat</title>
         <author>
             <name>alex benett</name>
         </author>
@@ -226,7 +294,7 @@
         <id>https://alexmakes.github.io/autocrat/</id>
             <category term="Projects"/>
 
-        <updated>2023-04-11T13:47:38+01:00</updated>
+        <updated>2023-04-13T11:00:31+01:00</updated>
             <summary>
                 <![CDATA[
                     AutoCrat is a project that aims to create a robot capable of reading, writing, and folding hand-written letters, as well as performing other "paperwork" tasks. The project is intended to be a cutting-edge robot that can revolutionize the way we handle our paperwork. Before we&hellip;
