@@ -3,12 +3,32 @@
     <title>AlexMakes</title>
     <link href="https://alexmakes.github.io/feed.xml" rel="self" />
     <link href="https://alexmakes.github.io" />
-    <updated>2023-04-27T23:34:20+01:00</updated>
+    <updated>2023-04-27T23:42:41+01:00</updated>
     <author>
         <name>alex benett</name>
     </author>
     <id>https://alexmakes.github.io</id>
 
+    <entry>
+        <title>hint</title>
+        <author>
+            <name>alex benett</name>
+        </author>
+        <link href="https://alexmakes.github.io/hint/"/>
+        <id>https://alexmakes.github.io/hint/</id>
+
+        <updated>2023-04-27T23:42:41+01:00</updated>
+            <summary>
+                <![CDATA[
+                    https://googlethatforyou.com?q=what%20three%20words%20additives.pursuit.damage
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>https://googlethatforyou.com?q=what%20three%20words%20additives.pursuit.damage</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Nacre</title>
         <author>
