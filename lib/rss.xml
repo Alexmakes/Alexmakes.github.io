@@ -1,0 +1,322 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Alexmakes]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>Alexmakes</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 28 May 2024 18:21:56 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 28 May 2024 18:21:51 GMT</pubDate><copyright><![CDATA[alex]]></copyright><ttl>60</ttl><dc:creator>alex</dc:creator><item><title><![CDATA[AutoCrat]]></title><description><![CDATA[ 
+ <br>A machine that writes poems in the form of formal complaints to a fictional place, generated through a local language model, will create these poems using a fountain pen and a plotter. Once written, these poems will be given to the public<br>Github repository is found <a data-tooltip-position="top" aria-label="https://github.com/Alexmakes/Autocrat" rel="noopener" class="external-link" href="https://github.com/Alexmakes/Autocrat" target="_blank">here</a><br><img src="\lib\media\pasted-image-20240514210058.png"><br><br> A local Large Language Model (LLM) called TheBloke Dolphin 2.1 'Mistral' 7B Q6_K hosted within LLM Studio using its OpenAI API Python interface to pass an API call to the LLM to generate responses for my code in llmapi.py.<br>Once the user presses the button 'Q' on the keyboard, the code generates a prompt based on a list of known prompts in the file 'llmapi/llm_messages'. Then, it randomly chooses a local authority within the file 'llmapi/councils', passes the pre-prompt and prompt to the LLM, and awaits the response.<br>Then the response is passed too the handwriting_synthesis&nbsp;<a rel="noopener" class="external-link" href="https://github.com/otuva/handwriting-synthesis" target="_blank">https://github.com/otuva/handwriting-synthesis</a>&nbsp;and that generates a tool path that is cleaned up in plot.py then is sent to the pen plotter plots on to paper via the axidraw api<br><br><br>
+<br>
+Using GPT-4ALL, I have got a running LLM (Large Language Model) on a Dell PowerEdge server that will respond to a user from a prompt. It doesn't have a means of inputting information into the command at the moment.
+
+<br>
+Using a tool chain of Windows applications, I got a pen plotter to write a message if manually transferred with a Hershey's font message. The pen plotter is best used with a ballpoint tip; the end goal is to use a fountain pen.
+
+<br>
+The paper will need to be moved around the machine using PVC pipe rollers on skate board bearings mounted to wood, so that I can hack it together on a small budget while making it as simple to build as possible.
+
+<br>
+The PCB (Printed Circuit Board) is being designed in Tinkercad at <a rel="noopener" class="external-link" href="https://www.tinkercad.com/things/dmjyJZViut4-brilliant-kieran-waasa/edit" target="_blank">https://www.tinkercad.com/things/dmjyJZViut4-brilliant-kieran-waasa/edit</a>. It uses photo gates to detect the paper and an H-bridge to control motors with an Arduino Uno to control it all. The code can be found at ~/Code/photogate.
+
+<br>
+A folding machine will need to be bought from this guy and built.
+
+<br>Some minor suggestions for improvement:<br><br>m3 bolts whenever a bolt is needed for anything<br>
+m8 smooth rods when ever anything needs to rotate<br>
+skateboard bearings used for bearings<br>
+3d printed parts out of PLA when possible on a prusa Mk4<br><br><br>designed this controller for paper control via photo gates and dc motors controlled via bridge see pic<br>
+<img src="\lib\media\pasted-image-20240514190526.png"><br>code for the photo gates is in ~/Code/photogate<br>
+note removed the 12V and the 5V grounds separate <br><br>H bridges are working now i have worked out you need twise the number of them to control 4 motors and working round a floating ground issue messing with the logic voltage.<br>
+<img src="\lib\media\pasted-image-20240514190544.png"><br>current issue is trying to pull down the voltage on the photogates as they are not being pulled down and remain at logic level High<br><img src="\lib\media\pasted-image-20240514190744.png"><br>
+replaced the photo transistors for photo resistors as the logic level wasn't low enough<br>
+new lay out <br><br>Here is the corrected text:<br>Using Daw.IO, I have started the flow diagram for the firmware. I have added error catching and photo gate control to the flow diagram and added an input for the user. Still, I don't know where to use servos or not - it depends on whether the paper comes out straight from the stack and if it needs stopping or not. I have left the flow chart at the plotter io state; the image is below. Still need to add this to hackaday.io. <br><img src="\lib\media\pasted-image-20240514190755.png"><br><br>I'm pleased to report progress with the flow chart, and I've created a diagram of the machine in its latest form. Notably, the motor that inserts the paper into the plotter never relinquishes control while it's being written on; instead, it uses a servo to change the path of the paper to a below-level location where the folding machine is housed.<br><img src="\lib\media\pasted-image-20240514190809.png"><br><br>using the code from this website <a rel="noopener" class="external-link" href="https://microcontrollerslab.com/arduino-l293d-motor-driver-shield-tutorial/" target="_blank">https://microcontrollerslab.com/arduino-l293d-motor-driver-shield-tutorial/</a><br>
+and the pic of the test stand<br><img src="\lib\media\pasted-image-20240514192020.png"><br><br>I wrote some code to get the motors working using DeepSea to debug sections. The problem with the delay() in the loop stops anything below it from working, so all delays should be in functions.<br>I've got an if statement that will call the turnOnMotor() function if true, and will turn off the motors with its relevant function otherwise.<br><img src="\lib\media\pasted-image-20240514192253.png"><br><br>making a paper management mechanisms is taking too long so i will drop it<br><br>moved over to getting the code working and found that axi draw have an API fro there drawing program <a rel="noopener" class="external-link" href="https://axidraw.com/doc/cli_api/" target="_blank">https://axidraw.com/doc/cli_api/</a> and im able to to use it to build it<br>
+got to the install via python3 -m pip install https://cdn.evilmadscientist.com/dl/ad/public/AxiDraw_API.zip it conflicted need to come back later<br><br>/home/alex/Documents/Autocrat/AxiDraw_API_396/python3 axicli.py --help<br>
+<br>to get the output of LLM studio
+<br>to get the output of sample of the input of axicli.py
+<br>to get the output of libra office cli for formatting 
+<br>then glue them together
+<br><br>re installed the openai lib via pip and now using pip3, it now all works <br>their should be a script that the user generates the prompt via adlib<br>
+so a box of of a location . <br>i have got the code to work file name is llmapi.py <br>now have the wizardllm uncensored and it works fine i can now generate the enquired text about what ever i like<br><br>tool chain so far <br>LLM manger -&gt; Libra office template -&gt; exsport as pdf -&gt; pdf2svg  to svg -&gt; axidraw to gcode<br>for pdf to svg im going to be using <a rel="noopener" class="external-link" href="https://github.com/dawbarton/pdf2svg" target="_blank">https://github.com/dawbarton/pdf2svg</a> with the tool chain of pdf2svg &lt;input.pdf&gt; &lt;output.svg&gt; [&lt;page no of pdf or "all"&gt;]<br>pandoc could also work with pandoc input.txt -o output.pdf<br><br>after testing with the uncensored model i found a worrying issue, that's its horribly racist and is quick to insult people. the solution is too use prepared prompts that would be <br>
+<br>petty 
+<br>harmless
+<br>hard to be racist against 
+<br><br>minor issues <br>
+<br>potholes
+<br>dirty buss stops
+<br>cyclists 
+<br>bin lorry too early
+<br>un emted bins
+<br>too much graffiti
+<br>children having too much fun during shcool hours
+<br>bus is late
+<br>people parking outside my house 
+<br>gum
+<br>post office closes to early
+<br>not enough cash machines
+<br>roads brumby
+<br>taking too long to complain
+<br>the bridge is an awful color
+<br>horrible cycle paths
+<br>emails with the wrong name on them
+<br>People who don't indicate 
+<br>The queue at the coffee shop moves far too slowly.
+<br>Overcrowded public transport during rush hour.
+<br>The constant interruption of your favorite TV show by annoying advertisements.
+<br>Overpriced items in corner shop
+<br>Inconsiderate dog owners who don't clean up after their 
+<br>pets.
+<br>Littering in public places
+<br>The inefficiency of public transportation systems, with frequent delays and cancellations.
+<br>Overly enthusiastic salespeople who follow you around the store without giving you space to browse.
+<br>Long waiting times for appointments at medical facilities, causing unnecessary stress.
+<br>People who don't put their shopping trollies  in the designated area after use.
+<br>The lack of accessible public restrooms for individuals with disabilities.
+<br>Traffic during peak hours, wasting valuable time and increasing road congestion.
+<br>Unreliable internet connections during important video calls or online gaming sessions.
+<br>The seemingly endless construction work on major roads.
+<br>Noisy neighbours who host frequent parties or engage in loud activities late into the night.
+<br>People who don't flush the toilet in public restrooms, leaving the next user with an unpleasant task.
+<br>The lack of adequate parking spaces in busy areas, forcing you to walk long distances with your shopping bags or heavy luggage.
+<br>stale sandwiches
+<br>Excessively loud televisions in public spaces
+<br>food waste
+<br>Overcrowded gyms
+<br>The decline of traditional letter writing due to the rise of electronic communication, leading to the loss of a cherished form of personal connection.
+<br>Inconsistent recycling practices
+<br>the double yellow lines aren't yellow enough 
+<br>neighbours house house looks too good makes mine look bad 
+<br>neighbours window sunlight into my eyes at noon
+<br>neighbours hedge too tall
+<br>neighbours hedge too short
+<br>corner shop does stock my favourite biscuits 
+<br><br>time too upload to github its getting hard to keep track of things on my laptop alone <br><br>I added it to my Git. I used the DeepSeek 7B model to help with making the UI, as I've not made anything with GUI before. After reading the code from the printer in the hackerspace, I chose to use the same library, Tkinter.<br><br>did some coding on the way home from the space and bashed out a GUI with the help of deep seek as I not used that library before and it works. <br><img src="\lib\media\pasted-image-20240514192325.png"><br>
+next task is too get the ui to call the right functions with the data selected by the user <br><br>How this machine is going to be laid out with a track ball in the front of the monitor and the pen plotter too the side<br>
+edit: this is stupid i changed this<br><br>due to how much of an issue the GUI is I will remove it so can finish on time and will now randomly chose a prompt when the user presses a button on HID device<br><br>Possible to use an Uno as a HID (Human Interface Device) and have a micro-switch trigger a keyboard button. Maybe there's a HackDay article on the subject.<br>todo<br>
+<br>get the code to trigger text gen on a button press DONE
+<br>get the prompts to read the file of promts randomly and add this to the varible of the prompt DONE
+<br>get a one button keyboard to work 
+<br><br>both my CPP's for EMF camp have been accepted that is both this autocrat and the trebuchet <br><br><img src="\lib\media\pasted-image-20240514192337.png"><br>
+made the code more functional and less procedural you now can edit the promt and pre promt in thier own functions and are genrated on the fly from a list of promts and councils  <br><br>writing more functions <br>my code doesnt work i wrote a lot of functions so will come back tomorrow and re do it<br><br>wrote more code to get it to output into a .md file however this is all on one line a porblem for later<br>
+<br>DONE fix output of convert_to_markdown(message): too format using the /n for new lines
+<br>now time to get it talking to pandoc its having a hissy fit using this command pandoc -f markdown output.md -t test.pdf<br>fixed the output of the message and fixed the /n with a replace <br>
+<br>encoding error
+<br><br>code works to produce pdf file now need to format the file to look like a letter using LaTex<br>
+<br>use the built in pyhon read file functiuon to read the file as the front matter is being added to the output.md in one line<br>
+now complaining about font familys like the front mater worked !
+<br><br>built the pen plotter and got it plotting <br>its API documentation here <a rel="noopener" class="external-link" href="https://wiki.evilmadscientist.com/AxiDraw" target="_blank">https://wiki.evilmadscientist.com/AxiDraw</a><br>added a arm to hold down paper its 3d printed<br><img src="\lib\media\6426e2a9-a778-493d-8087-bd081edd0309.jpg"><br><br><br>debugging the pen plotter as their was some issues with voltage on the stepper drivers as so upped them to 0.8v over 0.5v this solved the issue<br><img src="\lib\media\pasted-image-20240514192401.png"><br>
+did some user testing on single line fonts and found a couple contenders one beeing <br>
+<br>EMSNeato
+<br>EMSDelight<br>
+both can be found in the fonts folder of the repo 
+<br>updated the board to work with a the home Gcode now its orgin is in the top left of the machine <br>code is being started to be made on the automatic plotting of the markdown with the plot.py file <br>added files to make svg and try and convert them this can be found in the history of chatgpt and the<br>
+files <br><br><a rel="noopener" class="external-link" href="https://github.com/sjvasquez/handwriting-synthesis" target="_blank">https://github.com/sjvasquez/handwriting-synthesis</a><br>
+this was used by stuff made here to great affect it should solve both the hand writing issue and taking the text and converting into something that the pen plotter can use <br>
+<br>get the repo working<br>
+ive added it repo
+<br><br><a rel="noopener" class="external-link" href="https://github.com/sjvasquez/handwriting-synthesis" target="_blank">https://github.com/sjvasquez/handwriting-synthesis</a>  needs tensor flow and as i dont have a gpu in the server i wil be needing it to be done using cpu so that means building from source YAY/s <br>export CUDA_VISIBLE_DEVICES=""
+Copy<br>updated the git to this new repo <a rel="noopener" class="external-link" href="https://github.com/otuva/handwriting-synthesis" target="_blank">https://github.com/otuva/handwriting-synthesis</a><br><br>to get the genration working you need to get it to running in a enviroment <br>
+(hand_gen_env) alex@henry:~/Documents/Autocrat/handwriting-synthesis$ python3 -m venv hand_gen_env
+(hand_gen_env) alex@henry:~/Documents/Autocrat/handwriting-synthesis$ python main.py
+Copy<br><br>got the axi draw working on the server i needs a regex from the<br>height="100%" to height="1052.362179" and width="100%"  to width="744.09447"
+Copy<br>the pen plotter chrashes now this is good fun/s <br>good idea is to try and realses the internal of the pen plotter and try again <br>the above code works btw and now need to get it working for my project<br><br>things too do <br>
+<br>regex replace the 100% with a4 dimentions so that i can be pen plotted 
+<br>split up the compaint into 75 char lines 
+<br>make a button and attach it to the plotter
+<br>write a good read me 
+<br>comit new code
+<br>cite who i got this forcked code off 
+<br>line 118 is sus got need to look at that look at chat gpt
+<br>fix the ns0 attribuite in plot.py
+<br>Things I have done today,<br>I have managed to get the handwriting recognition model working, and it is now installed into my code with the output of the LLM Bing piped into the input of the model. Additionally, I have added a plot.py file for testing the plotter as it was having issues with reliability; this was resolved by reflowing the USB port on the PCB and changing out the cable.<br><br><br>fixed the code that sorts the lines into 75 char long and now outputs a short poem this is a good idea as its speeds things up<br>
+problem is that it still draws the box the issue is that the &lt;ns0:defs /&gt;&lt;ns0:rect height="1052.362179" width="744.09447" x="0" y="0" /&gt; is making a black sqaure that the plotter plots and its an issue alos having stability issues with the code<br>
+the git has also gone missing so need to repair that<br>
+an idea is too whole sale replacemnt of top of the svg and get the correct one from the bottom axi draw api <br><br>used a hacky fix to make sure the svg is valid by chopping off the top and adding valid svg headers from a known file.<br>
+trimmed in the plotter as it was having issues with one side being a little too high<br>
+code now works after i spent so long trying to get it to work this has taken a long time<br>so far I have<br>
+<br>learnt eltronics from scratch only not too use it in the this project as it would have taken too long
+<br>though it could be done in a long shell script how wrong i was
+<br>learnt python3 with the help of the hackspace and my own dedication
+<br>screamed at a server for far too long
+<br>knowing how to maintain a ubuntu server and get linux to do things i never thought i could do without re imaging it.
+<br>building a pen plotter without instructions as there whernt any
+<br>interfacing with an api 
+<br>writing a function for that
+<br><br><br>the pen plotter needs to be reliable so to test the pen it can do something useful as well, m<br>
+<img src="\lib\media\90415007-11ec-4bc3-9966-f3b3aa9c3cf7.jpg"><br>
+can you spot the error in this i can i will have too re do this<br>
+<img src="\lib\media\footercloser.png"><br><br>finally i can say it is all in one piece ( minus the servo board that broke )<br>with the screen off<br>
+<img src="\lib\media\pasted-image-20240514205852.png"><br>
+with the screen on<br>
+<img src="\lib\media\pasted-image-20240514205927.png"><br><br><br>making the posters off the .GOV website the whole project is ment to be piss take so why not the branding too<br>
+so i present the new logo of the Autocrat<br>
+<img src="\lib\media\_cf8d8adc-f912-4b9c-9d19-505ee48de37f.jpg"><br><br>in publisher writing the how to poster<br>
+<img src="\lib\media\pasted-image-20240514205435.png"><br><br>a promo poster is going to be next to the machine showing how it was made this was also made in publisher<br>
+<img src="\lib\media\pasted-image-20240514205710.png"><br><br>Now the replacement EBB board arrived I can now finish the project. so lets go over what I did<br>
+<br>programmed the start and stop buttons too use autokey shortcuts too launch the LLAPI.py script 
+<br>The stop key is simply a Ctrl + C as this the only way the EBB board can be stopped with software, as in the API does not contain a means of pausing with software. the only way i can pause it manually is a small button on the board it's self delicate. 
+<br>Pen plotter screwed down to the bed
+<br>Written a UI in terminal
+<br>Added power cut-off for the 12v + rail thought a lightswitch  
+<br><img src="\lib\media\pasted-image-20240526161756.png">]]></description><link>projects\autocrat.html</link><guid isPermaLink="false">projects/AutoCrat.md</guid><dc:creator><![CDATA[alex]]></dc:creator><pubDate>Tue, 28 May 2024 18:21:42 GMT</pubDate><enclosure url="lib\media\pasted-image-20240514210058.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240514210058.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Conference poster]]></title><description><![CDATA[ 
+ <br>As a pat of the Watts on the moon Challenge our team was invited to present at The Lunar Surface Innovation Consortium May 11, 2021 at John Hopkins University. the theme was Luna dust mitigation. <br><br>you can get your copy  of the poster <a class="internal-link" data-href="/lib/media/launchpad-dust-mitigation-with-chitosan-biofoam-and-in-situ-resource.pdf" href="\lib\media\launchpad-dust-mitigation-with-chitosan-biofoam-and-in-situ-resource.pdf" target="_self" rel="noopener">here</a>  <br><br><a data-tooltip-position="top" aria-label="https://www.zotero.org/60madethebestscience#MCMRH27P" rel="noopener" class="external-link" href="https://www.zotero.org/60madethebestscience#MCMRH27P" target="_blank">A. Bennett and G. Licina, “Launchpad Dust Mitigation with Chitosan Biofoam and In Situ Resource.pdf,” Lunar Surface Innovation Consortium, Apr. 2021, p. 2, [Online].</a><br><img src="\lib\media\pasted-image-20240519150652.png">]]></description><link>projects\luna-dust-mitigation.html</link><guid isPermaLink="false">projects/Luna Dust mitigation.md</guid><dc:creator><![CDATA[alex]]></dc:creator><pubDate>Wed, 22 May 2024 15:51:47 GMT</pubDate><enclosure url="lib\media\pasted-image-20240519150652.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240519150652.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[PCBEE]]></title><description><![CDATA[ 
+ <br><br>Dead link <a data-tooltip-position="top" aria-label="https://www.sciencemuseumgroup.org.uk/wp-content/uploads/2020/06/SMG_AR_2020_web_version.pdf" rel="noopener" class="external-link" href="https://www.sciencemuseumgroup.org.uk/wp-content/uploads/2020/06/SMG_AR_2020_web_version.pdf" target="_blank">sciencemuseum annual review:24-25</a><br>A community outreach scheme aims to educate students on STEM subjects by hosting a number of workshops at events such as MakeFest Manchester and Maker Faire Newcastle.<br><img src="\lib\media\pasted-image-20240519152516.png"><br>For this reason, we designed our own printed circuit board (PCB) badge, used to teach the public basic soldering skills. This can help them build a LED badge in the shape of the Manchester's iconic worker bee.<br><img src="\lib\media\pasted-image-20240519152544.png">]]></description><link>projects\pcbee.html</link><guid isPermaLink="false">projects/PCBEE.md</guid><dc:creator><![CDATA[alex]]></dc:creator><pubDate>Tue, 21 May 2024 15:47:50 GMT</pubDate><enclosure url="lib\media\pasted-image-20240519152516.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240519152516.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Intro]]></title><description><![CDATA[ 
+ <br><br>In 2021-2022, I developed a novel water-resistant bioplastic concept to be showcased at that year's Dutch Design Week.<br>I built a lab at Hackspace Manchester and took on the role of researcher to fulfill the project. I successfully produced an MVP (Minimum Viable Product) on time for Dutch Design Week. This is my story.<br><img src="\lib\media\img_7301.jpg"><br>
+above synthetic nacre <br><br>Brief was simple: a new biodegradable material intended to replace petrochemical-treated roofing shingles, as it possesses:<br>
+<br>Water stability.
+<br>Mechanical properties similar to those of wood (specifically, pine).
+<br>The ability to be manufactured into a flat sheet.
+<br><br>Before research can take place, a lab needs to be built. Where better than a little-looked-after corner of the hackerspace? The problem is that there is a hole in the corner that requires a lot of work.<br>
+<img src="\lib\media\img_20211007_161152949.jpg"><br>
+the room needed scaffolding putting up too remove a section duct work that had been placed in the cavity since the building was refurbished.<br>
+<img src="\lib\media\img_20211001_203420564.jpg"><br>
+walls where cleaned floor was sealed, painted and made to look a lot nicer than it was. total area just shy of a shipping container<br><br>Research started with basic laboratory supplies, taking time to get to work. Most of it was bought second-hand.<br>
+<img src="\lib\media\img_20211011_180826672.jpg"><br><br>Now, with a laboratory in hand, a starting point was needed, and for that, materials were needed. Four materials were chosen for their physical properties and manufacturing processes. The material from the short list I chose to pursue was a form of mineralized chitosan - a copy of<a class="internal-link" data-href="#Nacre" href="\#Nacre" target="_self" rel="noopener">Nacre</a>   <br>
+<br>SCoBY (Symbiotic Culture of Bacteria and Yeast) leather is a flexible, tough material similar to leather, limited by bio-reactor size. Greatly affected by disturbance on the surface. It does not scale well. The sample was made by Gabriel L.<br>
+<img src="\lib\media\pasted-image-20240516171908.png">
+<br>Paper-based chitosan composites had the strength required, but degraded under water. A sample was made by Gabriel L.<br>
+<img src="\lib\media\pasted-image-20240516172038.png">
+<br>Chitosan hydrogels could be made on a large scale and affordably; however, they lack water stability in their raw form. Modifying its properties is well understood from the literature.<br>
+<img src="\lib\media\pasted-image-20240516172059.png">
+<br>Alginate and mineral alginate cross-linked with calcium chloride. Water-stable, however, too brittle in its current configuration. This sample was prepared by Gabriel L.<br>
+<img src="\lib\media\pasted-image-20240516172235.png">
+<br><br><br>
+<br>
+Natural nacre is a durable composite of Aragonite plates and silk fibroin (1)(2)(3)<br>
+<img src="\lib\media\pasted-image-20240515170258.png">
+
+<br>
+Nacre is grown within bi-valves most popular is the Abalon
+
+<br>
+All members of the Abalone population [4] are in decline due to overfishing
+
+<br>
+Whilst Synthetic nacre has been reproduced in the lab [1][2][3][6][7] their methods haven’t been observed outside of a lab at scale
+
+<br>
+Current synthetic nacre relies on unproven manufacture methods. i would like to change this
+
+<br><br>
+<br>To mimic the Nacre aragonite platelets, needs to be grown in interlocking aligned structure.
+<br>Need to promote aragonite growth while inhibiting calcite formation<br>
+<img src="\lib\media\pasted-image-20240516202209.png">
+<br>Directed crystal growth on the  a-b-Axis via surface modification of the chitosan with short length peptides. While inhibiting growth on the c-Axis
+<br><img src="\lib\media\pasted-image-20240516194427.png"><br><br><br>In an early experiment on growing argonite (not "aragonite") cotton, I was finding it difficult to source chitinase (not "chitosan"). These experiments did not work out as expected, because crystals would not adhere to the surface of the fibers.<br><br>To grow the crystals on the hydrogel, the film needs to be held down. For this, I made a jig that holds down the film so that it does not curl up.<br><img src="\lib\media\img_20220321_162335189.jpg"><br><br>
+<br>Following examples from literature, it was possible to grow aragonite outside of a biological system.
+<br>Our research into aragonite platelet growth on modified chitosan hydrogels (PMMA) has proven successful. Below, you can see the aragonite crystals are the pointy strands.
+<br><img src="\lib\media\pasted-image-20240516192843.png"><br>
+Issues with dendritic growth and erratic changes in morphology of the aragonite reduced yields were in the milligrams per litre (mg/L) range, and thus new processes were needed.<br><br><img src="\lib\media\pasted-image-20240516221314.png"><br><br>A final product was made after changing the protocol, and a series of tests were done to test their suitability. I cannot go into too much detail on what this material is made of or how it's made, but I will show some of the tests below. Below is a sample of the final MVP.=<br>
+<img src="\lib\media\pasted-image-20240516221117.png"><br><br>The samples were cut and placed in water and were observed for a period of one month.  <br>
+<br>Treated panels were more water stable than untreated panels.
+<br>Untreated panels experienced water damage within hours of contact and completely degraded within a month
+<br>In contrast, the treated panels showed little to no damage after a week and only a minor color change after a month with no further degradation
+<br><br><img src="\lib\media\pasted-image-20240516220835.png"><br><br><img src="\lib\media\pasted-image-20240516220922.png"><br><br>I had a lot of fun at Dutch Design Week, speaking to a lot of people about biomaterials. Here are some of the pictures from that trip.<br><img src="\lib\media\pasted-image-20240516221633.png"><br>
+the building was shaped like a UFO<br>
+and a picture of our table inside<br>
+<img src="\lib\media\pasted-image-20240516221725.png"><br>
+another team had a perfume robot that i helped fix from a overly tight belt and in return i got given some of the robots perfume.<br>
+<img src="\lib\media\pasted-image-20240521161946.png"><br><br> [1]E. M. Spiesz et al., “Bacterially Produced, Nacre‐Inspired Composite Materials,” Small, vol. 15, no. 22, p. 1805312, Apr. 2019, doi: <a rel="noopener" class="external-link" href="https://doi.org/10.1002/smll.201805312" target="_blank">https://doi.org/10.1002/smll.201805312</a>.<br>
+[2]L.-B. . Mao et al., “Synthetic nacre by predesigned matrix-directed mineralization,” Science, vol. 354, no. 6308, pp. 107–110, Aug. 2016, doi: <a rel="noopener" class="external-link" href="https://doi.org/10.1126/science.aaf8991" target="_blank">https://doi.org/10.1126/science.aaf8991</a>.<br>
+[3] H.-L. Gao et al., “Mass production of bulk artificial nacre with excellent mechanical properties,” Nature Communications, vol. 8, no. 1, 2017. doi:10.1038/s41467-017-00392-z • [4]NOAA Fisheries, “White Abalone,” NOAA, 2019. <a rel="noopener" class="external-link" href="https://www.fisheries.noaa.gov/species/white-abalone" target="_blank">https://www.fisheries.noaa.gov/species/white-abalone</a><br>
+[5] (5) “Blue Mussel,” Wikipedia, 23-Sep-2022. Online:. Available: <a rel="noopener" class="external-link" href="https://en.wikipedia.org/wiki/Blue_mussel#/media/File:Mytilus_edulis_001.jpg" target="_blank">https://en.wikipedia.org/wiki/Blue_mussel#/media/File:Mytilus_edulis_001.jpg</a>. Accessed: 09-Jan-2023:.<br>
+[6] (6) E. M. Spiesz, D. T. Schmieden, A. M. Grande, K. Liang, J. Schwiedrzik, F. Natalio, J. Michler, S. J. Garcia, M. E. Aubin‐Tam, and A. S. Meyer, “Bacterially produced, nacre‐inspired composite materials,” Small, vol. 15, no. 22, p. 1805312, 2019.<br>
+[7] (7) T. Kato, “Polymer/calcium carbonate layered thin-film composites,” Advanced Materials, vol. 12, no. 20, pp. 1543–1546, 2000. doi:10.1002/1521- 4095(200010)12:20&lt;1543::aid-adma1543&gt;3.0.co;2-p<br>
+[8] (8) K. K. Sand, J. D. Rodriguez-Blanco, E. Makovicky, L. G. Benning, and S. L. Stipp, “Crystallization of caco3 in water–alcohol mixtures: Spherulitic growth, polymorph stabilization, and morphology change,” Crystal Growth &amp;amp; Design, vol. 12, no. 2, pp. 842–853, 2011. doi:10.1021/cg2012342]]></description><link>projects\sea_chells.html</link><guid isPermaLink="false">projects/Sea_Chells.md</guid><dc:creator><![CDATA[alex]]></dc:creator><pubDate>Tue, 21 May 2024 15:19:46 GMT</pubDate><enclosure url="lib\media\img_7301.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\img_7301.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[In action at Norton priory 2023]]></title><description><![CDATA[ 
+ <br>As part of historical enactments, there's a lot of stunt work that takes place to show an accurate account of what happened without hurting or destroying any properties. So how do you smash down a castle door for real? Bring your own castle, of course! Here, you will find the build of my own trebuchet and work on our own stunt castle.<br><img src="\lib\media\pasted-image-20240519152815.png"><br><br>trebuchet being used on the field<br>
+<img src="\lib\media\pasted-image-20240516223807.png"><br>
+<img src="\lib\media\pasted-image-20240516223851.png"><br>
+Nunes in front the stunt Castle<br>
+<img src="\lib\media\pasted-image-20240516224332.png"><br><br>Usually, I would have access to a workshop, but this was 2020 lockdown in full affect and I had to make do with my flat.<br><br>The engine needs to be able to fit into a transit and be packable so that it can be easily moved around. It must also be able to reliably throw a 1 kg ball 90 meters.<br><br><img src="\lib\media\50887225_10158311754234741_2960499984807493632_o.jpg"><br><img src="\lib\media\51169482_10158311754129741_3016410194029576192_o.jpg"><br><img src="\lib\media\51939070_10158311754244741_1749879782172000256_o.jpg"><br><br><br>cutting out the mortice joints<br>
+<img src="\lib\media\img_20190414_115256817_hdr~20191009-150531-1.jpg"><br>
+shaping the arm with a draw knife<br>
+<img src="\lib\media\pasted-image-20240516203236.png"><br>
+assembly of the legs<br>
+<img src="\lib\media\img_20190416_193957352~20191009-150531.jpg"><br>
+starting to look like a trebuchet<br>
+<img src="\lib\media\img_20190421_124551567_hdr~20191009-150530.jpg"><br><br>the arm has a turned axle for accuracy. As you wan the machine to put the projectiles in the same place each time.<br>the rest of the arm was pinned together with a "floating arm" that allow it be swapped out for different events. the arm fitted will produce a distance of 90m the function of the distance thrown is the length of the arm and the ratio of the sling length, this allows us to adjust the machine for out needs on the day.<br><img src="\lib\media\img_20191108_161227109-1.jpg"><br>
+<img src="\lib\media\img_20191119_221801447.jpg"><br><img src="\lib\media\img_20191119_173456953.jpg"><br><img src="\lib\media\img_20191122_122427195.jpg"><br>
+<img src="\lib\media\pasted-image-20240516203414.png"><br>
+testing in the garden<br>
+<img src="\lib\media\pasted-image-20240521162348.png"><br>
+finished engine at Norton priory<br>
+<img src="\lib\media\pasted-image-20240516222603.png"><br><br>I operate and help build a flat-pack castle, which we use as a destructible prop with cut-out sections for people to break open and doors. This entire structure was built over the course of a weekend. Here are the pictures of those mad few days.<br>i was on mortice duty to cut the slots for the ground anchors<br>
+<img src="\lib\media\pasted-image-20240516225927.png"><br>
+one of the first engines being made <br><img src="\lib\media\pasted-image-20240516225951.png"><br>
+a lot of pizza was needed<br>
+<img src="\lib\media\pasted-image-20240516230025.png"><br>the finished pile of panels<br>
+<img src="\lib\media\pasted-image-20240516230104.png"><br>staking it down in a cross wind<br>
+<img src="\lib\media\pasted-image-20240516230132.png"><br>
+what i looks like upright<br>
+<img src="\lib\media\pasted-image-20240516230149.png">]]></description><link>projects\trebuchets-and-stunt-castle.html</link><guid isPermaLink="false">projects/Trebuchets and Stunt Castle.md</guid><dc:creator><![CDATA[alex]]></dc:creator><pubDate>Tue, 21 May 2024 15:34:47 GMT</pubDate><enclosure url="lib\media\pasted-image-20240519152815.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\pasted-image-20240519152815.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Watts on the Moon]]></title><description><![CDATA[ 
+ <br>I led a team of 7 researchers from Scihouse Inc. 501(c)3 in thier own time over a period of 3 months in early 2021 too complete the phase 1 of the watts on the moon challenge by NASA hosted on HeroX <a rel="noopener" class="external-link" href="https://www.herox.com/WattsOnTheMoon" target="_blank">https://www.herox.com/WattsOnTheMoon</a> <br>  <img src="\lib\media\1280x720-banner.jpg"> <br><br>
+<br>Gabriel Licina
+<br>Jasmine
+<br>Sy Bernot
+<br>Artem Litvinovich
+<br>Rubén Crespo Blanco
+<br>Elizabeth Cranston
+<br><br><br><br><img src="\lib\media\clip_image002.jpg" referrerpolicy="no-referrer"><br>
+<br>Pneumatic hoses 2. Frame 3. Pneumatic rotary motor 4. Vectran spokes 5. latching magnetic quick release&nbsp; 6.throwing arm 7. Payload 8. Flywheel 9. Counter weight.
+<br>The Launcher’s Model shown Video is of an outdated version please refer to current version in the attached documents.<br>&nbsp; The payload will be a Composite Overwrapped Pressure Vessel (COPV)&nbsp; [10] The COPV will contain Hydrogen or Oxygen that will be used by a fuel cell to power the NASA assets on the Moon.&nbsp;<br>Inside the crater will be stationed a specially designed free standing collapsible self folding structure made from Vectran and Vectran epoxy scaffold structures that will catch and decelerate the COPV in a place that is central to the mobility platform’s general area of primary operation.&nbsp; Vectran was chosen for its strength, durability and high performance in low K environments. <a data-href="2" href="\2" class="internal-link" target="_self" rel="noopener">2</a>(<a rel="noopener" class="external-link" href="https://drive.google.com/file/d/11hrDvpW9eqzryHXct11LJyVZvtDElm-P/view?usp=sharing" target="_blank">https://drive.google.com/file/d/11hrDvpW9eqzryHXct11LJyVZvtDElm-P/view?usp=sharing</a>)&nbsp;&nbsp; Vectran has had success in prior missions such as Mars Pathfinder as well as Rovers Spirit and Opportunity.&nbsp; The strong, lightweight, thermally and chemically stable fibre has been on just about every manned space mission as a layer in NASA's space suits.&nbsp;&nbsp; The supports for the structure are designed to collapse on impact in such a way that they absorb ballistic energy and translate that into rotational motion as the structure folds and captures the COPV, further dampening the impact of the COPV. Nitinol is used for dampening because of its super elastic properties as well as the memory effect allowing the structure to reset without human labor.<br>
+Nitinol can be made into complaint acutorators allowing the structure too aim the net towards the payload too compositein launcher accuracy. For this a thermally regulated power unit will be supplied using chemical batteries and resistive heaters. If permitted, a radiation based heater could be used to reduce battery mass. The main structure will remain thermally unregulated.<br>Complinet parts are used when possible to minimize bearing surfaces that are degraded from regolith contamination.<br><img src="\lib\media\clip_image004.jpg" referrerpolicy="no-referrer"><br>1 Vectran complaint core hinge [6] 2. Vectran epoxy superstructure 3. Nitinol Leaf spring and actuator 4. Vectran seine net 5. payload (captured)<br><img src="\lib\media\clip_image006.gif" referrerpolicy="no-referrer"><br>
+[6] The COPV is collected by the mobility platform and fuel is pumped out into a fuel cell on the mobility platform.&nbsp; Once the COPV is empty the mobility platform can load it into a return launch platform (RLP) with similar specs as the DLP.&nbsp; At the rim of the crater will be another collapsible self folding structure to capture the COPV. [10]<br>Payload is a ARDE Part Number 4941 [cite me the tank] and was chosen for its low weight and relatively high acceleration tolerance and high pressure rating for its size.<br>
+A shell of abrasion and corrosion resistant material, covers the foam lining.&nbsp; The COPV is secured in its shell with fibrous anchors, to increase the surface area of impacts so too minimise degradation to the COPV from repeated launch capture cycles.[cite stress testing copvs impact tests]<br>1 Payload shell 2. COPV 3. Foam lining 4. Fibrous anchors 5. Dust cover 6. Quick hose attachment port 7. Flexible High pressure plumbing<br>&nbsp; The Mobile Fuel Cell (MFC) carried by the mobility platform is a downsized version of the already space-proven Fuel Cell Power Plants employed by the Shuttle.&nbsp; In the Shuttle there were 3 of them, each composed of 96 cells grouped in 3 substacks and supplying between 2 and 12 kW of power [5].&nbsp; This technology is extremely mature for space operations, since it has already experienced 27,000 hours of operation in 45 missions [3].&nbsp; If we assume a fuel cell efficiency of 60% for an alkaline fuel cell [3] and assume a less-than-optimal architecture that produces 70% of the original power, each one of those cells can produce at least 20 W. A smaller MFC composed of 39 of those cells can provide up to 205 W of electrical power output and 136.6 W of waste heat that<br>can be harvested and used to supply the.!<br>
+<a data-tooltip-position="top" aria-label="file:///C:/Users/Admin/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg" rel="noopener" class="external-link" href="file:\\C:\\Users\Admin\AppData\Local\Temp\msohtmlclip1\01\clip_image008.jpg" target="_blank"></a><br>
+thermal energy requirements of the mobile platform.&nbsp; The MFC has an estimated mass of 29 kg and dimensions 8.9 cm x 9.6 cm x 25.4 cm extrapolating from the available information on the Shuttle Power System.&nbsp; This relatively small mass and size make it a practical option for transport and use in the mobility platform that will not radically increase power consumption in the mission scenario.&nbsp; Stacking of several MFC would allow for operation and delivery of higher power demand in other assets on the Moon, increasing the flexibility and modularity of lunar operations. The combination of this fuel cell with the water electrolyzer located next to the power plant constitute a Distributed Regenerative Fuel Cell, where H2 generation is close to power production and energy use is highly flexible across a large area while requiring minimal infrastructure. The hydrogen and oxygen present on the moon can be used indefinitely as the backbone of the energy storage and distribution system.<br>The waste heat generated by the MFC is dealt with through a Heat Management System (HMS). The HMS redirects some of the extra heat to deliver the thermal power requirements of the mobility platform and radiates away the excess. The structure and components of the system can be seen in figure x and table y (work in progress).<br><img src="\lib\media\clip_image010.gif" referrerpolicy="no-referrer"><br><img src="\lib\media\clip_image012.gif" referrerpolicy="no-referrer"><br>The hydrogen fuel cell keeps an operating temperature of 93ºC, from which the heat is extracted through an off-the-shelf heat exchanger to a tubing system that transports the heat using water as a thermal fluid [8]. The heat exchanger GBS 100M with one single plate has a heat flow rate determined by Fourier’s law of heat conduction, shown in equation z below.<br><img src="\lib\media\clip_image014.gif" referrerpolicy="no-referrer"><br>Where Q is the net heat transfer, Δt is the time, k is the thermal conductivity (in the case of a plate of stainless steel AISI 316L, 1.656 W/K [9]), A is the area (74 mm * 204mm), ΔT is the difference in temperature (93ºC - 50ºC = 43ºC) and Δx the thickness of the plate (10.3 mm). This heat exchanger has a heat flow rate of 4175 W, well in excess of the ~140 W of thermal energy generated.<br>The waste thermal energy is partially stored in a gas container holding H2 gas functioning as a thermal battery. H2 gas is the molecule with the highest specific heat capacity, containing 14300 J/kg*K. 5 kg of H2 at 93ºC can store 184469976 J (51241.66 Wh) before reaching 50ºC, enough to deliver the heat power requirements uninterrupted for ~17 minutes. A system of sensors and valves regulates the transfer of excess heat to the thermal battery.<br>All the heat that is not stored is radiated away using an oxidized steel radiator that emits the excess heat to space. The necessary dimensions of the radiator were calculated using the Stefan-Boltzmann law that describes the energy radiation of a black body (equation x)<br><img src="\lib\media\clip_image016.gif" referrerpolicy="no-referrer"><br>Where P is the radiated power (an excess of 86.66 W has to be radiated away), A is the area of the object, ε is the emissivity of the radiator (0.79 in the case of oxidized steel [7]), σ is the constant of proportionality of Stefan-Boltzmann and T the effective temperature (T radiator - T space). Solving this equation for the A, we find that a plate of 0.08 m2 and 1 mm of depth can get rid of all the excess heat. The rest of the heat power is delivered to a plate of stainless steel AISI 316L of 10 cm  10 cm  1 mm, according to the requirements expressed in the mission scenario. The water is then pumped back to the MFC to restart the cycle.<br>The total weight of the MFC and the HMS carried by the mobility platform is 73 kg. The total energy requirements for performing mission 1 carrying that weight according to the consumption indicated in the mission scenario is 56650 kWh. The energy content of H2 is 33 kWh/kg, and the fuel cell efficiency and operation efficiency are 60% and 70%, respectively. Thus, the delivery of 4.09 kg of H2 (or 36.786 kg of H2 + O2) is necessary for performing this mission successfully.<br>CITATIONS<br>
+[1] L. Schlüter, A. Cowley, Review of techniques for In-Situ oxygen extraction on the moon, Planetary and Space Science 181 (2020) 104753. doi:10.1016/j.pss.2019.104753.<br>[2] M.M. Finckenor, Comparison of High-Performance Fiber Materials Properties in Simulated and Actual Space Environments (2017) NASA/TM—2017–219634<br>[3] DeRonck, H. J. (1992). Fuel cell technology for lunar surface operations. FUEL, 93, 27965.<br>[4][https://www.energy.gov/sites/prod/files/2015/11/f27/fcto_fuel_cells_fact_sheet.pdf](<a rel="noopener" class="external-link" href="https://www.energy.gov/sites/prod/files/2015/11/f27/fcto_fuel_cells_fact_sheet.pdf" target="_blank">https://www.energy.gov/sites/prod/files/2015/11/f27/fcto_fuel_cells_fact_sheet.pdf</a>)<br>[5][https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/sts-eps.html](<a rel="noopener" class="external-link" href="https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/sts-eps.html" target="_blank">https://science.ksc.nasa.gov/shuttle/technology/sts-newsref/sts-eps.html</a>)<br>[6]L. L. Howell, S. P. Magleby, and B. M. Olsen, Eds., Handbook of compliant mechanisms. Chichester, West Sussex, United Kingdom ; Hoboken: John Wiley &amp; Sons, Inc, 2013.<br>[7][https://www.engineeringtoolbox.com/emissivity-coefficients-d_447.html](<a rel="noopener" class="external-link" href="https://www.engineeringtoolbox.com/emissivity-coefficients-d_447.html" target="_blank">https://www.engineeringtoolbox.com/emissivity-coefficients-d_447.html</a>)<br>[8][https://www.kelvion.com/products/category/brazed-plate-heat-exchangers/](<a rel="noopener" class="external-link" href="https://www.kelvion.com/products/category/brazed-plate-heat-exchangers/" target="_blank">https://www.kelvion.com/products/category/brazed-plate-heat-exchangers/</a>)<br>[9][https://www.aksteel.com/sites/default/files/2018-01/316316L201706_2.pdf](<a rel="noopener" class="external-link" href="https://www.aksteel.com/sites/default/files/2018-01/316316L201706_2.pdf" target="_blank">https://www.aksteel.com/sites/default/files/2018-01/316316L201706_2.pdf</a>)<br>[10] <a rel="noopener" class="external-link" href="http://www.ardeinc.com/sketches/copv/4941.pdf" target="_blank">http://www.ardeinc.com/sketches/copv/4941.pdf</a><br>[11][https://www.collinsaerospace.com/-/media/project/collinsaerospace/collinsaerospace-website/product-assets/marketing/s/space/space-qualified-pumps-data-sheet.pdf](<a rel="noopener" class="external-link" href="https://www.collinsaerospace.com/-/media/project/collinsaerospace/collinsaerospace-website/product-assets/marketing/s/space/space-qualified-pumps-data-sheet.pdf?rev=af2f294a39b24677a18630a96bbbac25" target="_blank">https://www.collinsaerospace.com/-/media/project/collinsaerospace/collinsaerospace-website/product-assets/marketing/s/space/space-qualified-pumps-data-sheet.pdf?rev=af2f294a39b24677a18630a96bbbac25</a>)<br>[12][https://www.twmetals.com/products/tubing/stainless-steel/aerospace/21-6-9.html](<a rel="noopener" class="external-link" href="https://www.twmetals.com/products/tubing/stainless-steel/aerospace/21-6-9.html?p=1&amp;product_list_order=outside_diameter" target="_blank">https://www.twmetals.com/products/tubing/stainless-steel/aerospace/21-6-9.html?p=1&amp;product_list_order=outside_diameter</a>)<br><br><img src="\lib\media\thewholesystem4.png"><br>
+<img src="\lib\media\net3.png"><br>
+<img src="\lib\media\wheelcutaway1.png"><br>
+<img src="\lib\media\egg1.png">]]></description><link>projects\watts-on-the-moon.html</link><guid isPermaLink="false">projects/Watts on the Moon.md</guid><dc:creator><![CDATA[alex]]></dc:creator><pubDate>Tue, 21 May 2024 15:33:58 GMT</pubDate><enclosure url="lib\media\1280x720-banner.jpg" length="0" type="image/jpeg"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\1280x720-banner.jpg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Alex Bennett]]></title><description><![CDATA[ 
+ <br><a class="internal-link" data-href="../Index.md" href="\index.html" target="_self" rel="noopener">Home</a> <br><br><br><img alt="A black background with a black square
+Description automatically generated with medium confidence" src="\lib\media\clip_image004.png" referrerpolicy="no-referrer"><a data-tooltip-position="top" aria-label="mailto:info@alexmakes.net" rel="noopener" class="external-link" href="mailto:info@alexmakes.net" target="_blank">info@alexmakes.net</a><br><img alt="*" src="\lib\media\clip_image006.png" referrerpolicy="no-referrer">&nbsp;alexmakes.net<br><br>I’m passionate about developing innovative products and technologies. I have a diverse set of skills which I can use to take an idea from the start of development to a finished product. I am autonomous, motivated, and thrive on mission-led projects. I’ve successfully completed projects from art robots for festivals to developing biomaterials. I am seeking opportunities to use my skills to drive change and make a positive impact.<br><br>
+<br>BS (hons) 2.1 Computer Networks and Security. - University of Bolton
+<br><br>
+<br>
+Prototyping from concept to a minimum viable product
+
+<br>
+Proficient in machining, additive manufacturing, plastics, fabrics, electronics and woodwork.
+
+<br>
+Proficient with CAD and CAM with Fusion 360&nbsp; and Prusa slicer
+
+<br>
+DevOps with Debian, Python3, Git, Windows and generative AI
+
+<br>
+Remaining product focused during stressful situations.
+
+<br><br>
+<br>
+Art robot for EMF Camp <a class="internal-link" data-href="projects/AutoCrat.md" href="\projects\autocrat.html" target="_self" rel="noopener">AutoCrat</a>
+
+<br>Designed and built an installation for the festival EMF Camp A machine which writes poems using AI with a pen plotter. These poems are handed out to the public to keep.
+
+
+<br>
+Project Sea_Chells with Gomi No Sensei. <a class="internal-link" data-href="projects/Sea_Chells.md" href="\projects\sea_chells.html" target="_self" rel="noopener">Sea_Chells</a>
+
+<br>Developed a novel water resilient bio plastic in a year from the a concept to be displayed at that years Dutch Design Week. For this I built a lab at Hackspace Manchester and researched the means of producing bio materials in 9 months I successfully produced a MVP on time for Dutch Design Week.
+
+
+<br>
+NASA competition though heroX <a class="internal-link" data-href="projects/Watts on the Moon.md" href="\projects\watts-on-the-moon.html" target="_self" rel="noopener">Watts on the Moon</a> 
+
+<br>As the Lead of a team of 7 researchers, I successfully completed Phase 1 of The Watts on the Moon challenge, by designing an innovative engineering approach to power transmission and energy storage on the lunar surface.
+
+
+<br>
+Volunteering: Hackspace Manchester trainer + maintainer <a data-tooltip-position="top" aria-label="https://www.hacman.org.uk" rel="noopener" class="external-link" href="https://www.hacman.org.uk" target="_blank">here</a>
+
+<br>I’m an active member of Manchester Hackspace maintain equipment, train new members and contribute to the running of the space.
+
+
+<br>
+Servicing Stunt Rigs as Volunteer armourer / inspection of props and equipment. <a class="internal-link" data-href="projects/Trebuchets and Stunt Castle.md" href="\projects\trebuchets-and-stunt-castle.html" target="_self" rel="noopener">Trebuchets and Stunt Castle</a>
+
+<br>I design, manufacture and run stunt rigs for live combat display in front of the public as a part of the historical society Historia Normannis
+
+
+]]></description><link>about-me.html</link><guid isPermaLink="false">About Me.md</guid><dc:creator><![CDATA[alex]]></dc:creator><pubDate>Mon, 20 May 2024 15:52:03 GMT</pubDate><enclosure url="lib\media\clip_image004.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib\media\clip_image004.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Index]]></title><description><![CDATA[ 
+ <br><img src="\images\footer-composite-white-background.png"><br><br><br>I'm Alex Bennett, a passionate developer of innovative products and technologies. With a diverse set of skills, I can take an idea from concept to finished product. Autonomy, motivation, and a drive for mission-led projects fuel my work.  you can find out more about me <br><br><br><a class="internal-link" data-href="projects/AutoCrat.md" href="\projects\autocrat.html" target="_self" rel="noopener">AutoCrat</a><br>
+<a class="internal-link" data-href="projects/Sea_Chells.md" href="\projects\sea_chells.html" target="_self" rel="noopener">Sea_Chells</a><br>
+<a class="internal-link" data-href="projects/Watts on the Moon.md" href="\projects\watts-on-the-moon.html" target="_self" rel="noopener">Watts on the Moon</a><br>
+<a class="internal-link" data-href="projects/Luna Dust mitigation.md" href="\projects\luna-dust-mitigation.html" target="_self" rel="noopener">Luna Dust mitigation</a><br>
+<a class="internal-link" data-href="projects/Trebuchets and Stunt Castle.md" href="\projects\trebuchets-and-stunt-castle.html" target="_self" rel="noopener">Trebuchets and Stunt Castle</a><br>
+<a class="internal-link" data-href="projects/PCBEE.md" href="\projects\pcbee.html" target="_self" rel="noopener">PCBEE</a><br><br><br><a data-tooltip-position="top" aria-label="https://github.com/Alexmakes/Autocrat/" rel="noopener" class="external-link" href="https://github.com/Alexmakes/Autocrat/" target="_blank">Github</a><br><br><br>I'm always looking for opportunities to apply my skills to drive change and make a positive impact. If you're interested in working together or discussing potential projects, please don't hesitate to <a data-tooltip-position="top" aria-label="mailto:info@alexmakes.net" rel="noopener" class="external-link" href="mailto:info@alexmakes.net" target="_blank">contact me</a>. You can also visit my website at<br>Thank you for taking the time to explore my portfolio!<br>This site doesn't track or store any of your information.<br>
+© 2021 Alex Bennett, All rights reserved.]]></description><link>index.html</link><guid isPermaLink="false">Index.md</guid><dc:creator><![CDATA[alex]]></dc:creator><pubDate>Mon, 20 May 2024 14:33:01 GMT</pubDate><enclosure url="images\footer-composite-white-background.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="images\footer-composite-white-background.png"&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>
